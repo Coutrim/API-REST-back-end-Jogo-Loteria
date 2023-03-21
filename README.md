@@ -19,11 +19,11 @@ Para executar os métodos HTTP da aplicação com alguma ferramenta de testes de
 No método POST, o corpo da requisição deve ser enviado dessa forma:
 
     {
-        "nome":  "github.com/israelferreira",
+        "nome":  "github.com/coutrim",
         "telefone":  "(61) 99999-1234",     
         "email":  "email@valido.com",
         "dataNascimento":  "1954-01-14",
-        "informacoesExtras":  null
+        "informacoesExtras":  "Teste"
     }
 
 O **nome** não pode ser nulo e deve ter entre 2 e 200 caracteres.<br>
