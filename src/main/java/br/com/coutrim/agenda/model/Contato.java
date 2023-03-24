@@ -1,5 +1,6 @@
 package br.com.coutrim.agenda.model;
 
+
 import org.codehaus.jackson.annotate.JsonProperty;
 
 import java.io.Serializable;
@@ -38,8 +39,9 @@ public class Contato implements Serializable {
 	
 	@JsonbDateFormat(value = "yyyy-MM-dd")	
 	@Column(name = "data_nascimento")	
-	private LocalDate dataNascimento;	
-	
+	private LocalDate dataNascimento;
+
+	@JsonProperty
 	@Size(max = 500)
 	@Column(name = "informacoes_extras")
 	private String informacoesExtras;
