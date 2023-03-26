@@ -81,5 +81,4 @@ Dentro da tag drivers, adicione o seguinte texto:
 </driver>
 ```
 
-
 Após esses passos, o backend do projeto deve ser executado no servidor WildFly.
