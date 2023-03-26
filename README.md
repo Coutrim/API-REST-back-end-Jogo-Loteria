@@ -8,28 +8,28 @@
 |----------|--------------|--------------|
 |`http://localhost:8080/apostas-backend/api/apostas`                                 | GET | Retorna todas as apostas salvas no banco de dados |
 |`http://localhost:8080/apostas-backend/api/apostas`                                 | POST | Salva uma aposta no banco de dados |
-|`http://localhost:8080/apostas-backend/api/apostas/id`                              | GET | Retorna o contato com o ID do parâmetro da URL |
+|`http://localhost:8080/apostas-backend/api/apostas/id`                              | GET | Retorna a aposta com o ID do parâmetro da URL |
 |`http://localhost:8080/apostas-backend/api/apostas/id`                              | DELETE | Deleta o registro da aposta com o ID do parâmetro da URL |
 |`http://localhost:8080/apostas-backend/api/apostas/id`                              | PUT | Atualiza o registro da aposta com o ID numérico do parâmetro da URL|
 
 
 ## Validações das requisições POST e PUT
-Para executar os métodos HTTP da aplicação com alguma ferramenta de testes de API, como o [Postman](https://www.postman.com/) por exemplo, é necessário configurar o cabeçalho (header) da requisição com o atributo chave-valor "Content-Type: application/json".
+Para executar os métodos HTTP da aplicação com alguma ferramenta de testes de API, como o [Postman](https://www.postman.com/) por exemplo, é necessário habilitar todas opções sugeridas no cabeçalho (header) da requisição e com o atributo chave-valor "Content-Type: application/json".
 No método POST, o corpo da requisição deve ser enviado dessa forma:
 
-    {
-        "nome":  "github.com/coutrim",
-        "telefone":  "(61) 99999-1234",     
-        "email":  "email@valido.com",
-        "dataNascimento":  "1954-01-14",
-        "informacoesExtras":  "Teste"
-    }
+    {   
+     "acertos":"1",
+     "erros": "1",
+     "ganhos":"2098",
+     "data":"2022-04-01 14:30:00"
+    
+}
 
-O **nome** não pode ser nulo e deve ter entre 2 e 200 caracteres.<br>
-O **telefone** pode ser nulo.<br>
-O **email** pode ser nulo. Caso for preenchido, deve ser válido, contendo um "@" na string.<br>
-A **data de nascimento** pode ser nula. Caso for preenchida, deve ser válida, no formato "YYYY-MM-DD".<br>
-As **informações extras** do contato podem ser nulas. Se forem preenchidas, o tamanho máximo é de 500 caracteres.<br>
+O campo **acertos** não pode ser nulo e deve ter entre 2 e 200 caracteres.<br>
+O campo **erros** pode ser nulo.<br>
+O campo **ganhos** pode ser nulo. Caso for preenchido, deve ser válido, contendo um "@" na string.<br>
+A **data** pode ser nula. Caso for preenchida, deve ser válida, no formato "YYYY-MM-DD".<br>
+
 
 O corpo da requisição no método PUT é similar ao POST. A diferença é que o ID do registro a ser editado deve ser passado como parâmetro na URL.
 
