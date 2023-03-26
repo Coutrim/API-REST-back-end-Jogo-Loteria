@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="agenda-telefonica-backend" />
+          <element id="module-output" name="apostas-backend" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.3" />
@@ -81,7 +81,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/agenda-telefonica-backend/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="agenda-telefonica-backend/web/Web" />
+      <element id="javaee-facet-resources" facet="apostas-backend/web/Web" />
     </root>
   </artifact>
 </component>

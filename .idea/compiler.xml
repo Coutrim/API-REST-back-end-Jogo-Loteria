@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="agenda-telefonica-backend" />
+        <module name="apostas-backend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="agenda-telefonica-backend" target="1.8" />
+      <module name="apostas-backend" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -3,15 +3,32 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>br.com.coutrim</groupId>
-  <artifactId>agenda-telefonica-backend</artifactId>
+  <artifactId>apostas-backend</artifactId>
   <version>1.0.0</version>
   <packaging>war</packaging>
 
-  <name>agenda-telefonica-backend</name>
+  <name>apostas-backend</name>
   
   <!-- Configuração necessária para remover o "-1.0.0" do arquivo WAR no deploy do servidor de aplicação -->
   <build>
     <finalName>${project.artifactId}</finalName>
+    <plugins>
+      <plugin>
+        <!-- Build an executable JAR -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <classpathPrefix>lib/</classpathPrefix>
+              <mainClass>br.com.coutrim.apostas.app.ApostasApp.class</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 
   <properties>

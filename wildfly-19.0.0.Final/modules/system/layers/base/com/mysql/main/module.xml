@@ -4,7 +4,8 @@
 	  <resource-root path="mysql-connector-java-8.0.28.jar" />
 	</resources>
 	<dependencies>
-	  <module name="javax.api"/>
-	  <module name="javax.transaction.api"/>
-	</dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+        <module name="javax.servlet.api" optional="true"/>
+    </dependencies>
 </module>
