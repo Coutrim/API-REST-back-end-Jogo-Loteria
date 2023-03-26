@@ -1,17 +1,16 @@
-# Agenda Telefônica
-## Esse é um projeto de uma Agenda Telefônica desenvolvido com a arquitetura REST. No front-end foi usado o framework Angular 10. No back-end: Java EE 8 com EJB3, RESTEasy (JAX-RS), Hibernate/JPA e o gerenciador de dependências Maven. O banco de dados é o MySQL 8.
+# Back-end do projeto Jogo Loteria
+## Esse é uma API desenvolvida com a arquitetura REST. No front-end foi usado o framework Angular 10. No back-end: Java EE 8 com EJB3, RESTEasy (JAX-RS), Hibernate/JPA e o gerenciador de dependências Maven. O banco de dados é o MySQL 8.
 
-### [Link do repositório do front-end](https://github.com/israelferreira/agenda-telefonica-frontend)
 
 
 ## URLs:
 |  URL |  Método | Descrição |
 |----------|--------------|--------------|
-|`http://localhost:8080/agenda-telefonica-backend/api/contato`                                 | GET | Retorna todos os contatos salvos no banco de dados |
-|`http://localhost:8080/agenda-telefonica-backend/api/contato`                                 | POST | Salva um contato no banco de dados |
-|`http://localhost:8080/agenda-telefonica-backend/api/contato/{id}`                              | GET | Retorna o contato com o ID do parâmetro da URL |
-|`http://localhost:8080/agenda-telefonica-backend/api/contato/{id}`                              | DELETE | Deleta o registro do contato com o ID do parâmetro da URL |
-|`http://localhost:8080/agenda-telefonica-backend/api/contato/{id}`                              | PUT | Atualiza o registro do contato com o ID numérico do parâmetro da URL|
+|`http://localhost:8080/apostas-backend/api/apostas`                                 | GET | Retorna todas as apostas salvas no banco de dados |
+|`http://localhost:8080/apostas-backend/api/apostas`                                 | POST | Salva uma aposta no banco de dados |
+|`http://localhost:8080/apostas-backend/api/apostas/id`                              | GET | Retorna o contato com o ID do parâmetro da URL |
+|`http://localhost:8080/apostas-backend/api/apostas/id`                              | DELETE | Deleta o registro da aposta com o ID do parâmetro da URL |
+|`http://localhost:8080/apostas-backend/api/apostas/id`                              | PUT | Atualiza o registro da aposta com o ID numérico do parâmetro da URL|
 
 
 ## Validações das requisições POST e PUT
