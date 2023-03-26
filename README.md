@@ -81,6 +81,5 @@ Dentro da tag drivers, adicione o seguinte texto:
 </driver>
 ```
 
-O script para criar o banco de dados está no arquivo "agenda-telefonica (MySQL8 Database).sql".
 
 Após esses passos, o backend do projeto deve ser executado no servidor WildFly.
