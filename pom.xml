@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>br.com.coutrim</groupId>
-  <artifactId>agenda-telefonica-backend</artifactId>
+  <artifactId>apostas-backend</artifactId>
   <version>1.0.0</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
-  <name>agenda-telefonica-backend</name>
+  <name>apostas-backend</name>
   
   <!-- Configuração necessária para remover o "-1.0.0" do arquivo WAR no deploy do servidor de aplicação -->
   <build>
@@ -23,7 +23,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>br.com.coutrim.agenda.app.ContatoApp.class</mainClass>
+              <mainClass>br.com.coutrim.apostas.app.ApostasApp.class</mainClass>
             </manifest>
           </archive>
         </configuration>
