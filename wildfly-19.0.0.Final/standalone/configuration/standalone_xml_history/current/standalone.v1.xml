@@ -525,9 +525,4 @@
             <remote-destination host="localhost" port="25"/>
         </outbound-socket-binding>
     </socket-binding-group>
-    <deployments>
-        <deployment name="apostas-backend.war" runtime-name="apostas-backend.war">
-            <fs-archive path="C:\Users\Henrique\Desktop\apostas-backend\target\apostas-backend.war"/>
-        </deployment>
-    </deployments>
 </server>

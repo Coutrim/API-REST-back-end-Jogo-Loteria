@@ -6,3 +6,4 @@ target/
 .target
 /target
 /wildfly-19.0.0.Final
+.idea

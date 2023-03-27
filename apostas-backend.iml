@@ -14,6 +14,7 @@
         <datasource-mapping>
           <factory-entry name="AgendaTelefonica" value="ba55a0b7-2932-44d7-be02-6dee6c26af86" />
           <factory-entry name="BancoLo" value="ba55a0b7-2932-44d7-be02-6dee6c26af86" />
+          <factory-entry name="BancoLoteria" value="ba55a0b7-2932-44d7-be02-6dee6c26af86" />
         </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
@@ -30,6 +31,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.7" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.12.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.12.3" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.12.3" level="project" />
@@ -113,5 +115,6 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.16" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.6.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: jakarta.platform:jakarta.jakartaee-api:8.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.26" level="project" />
   </component>
 </module>
