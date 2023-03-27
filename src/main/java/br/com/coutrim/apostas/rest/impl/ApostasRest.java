@@ -1,9 +1,8 @@
 package br.com.coutrim.apostas.rest.impl;
 
-import java.util.List;
-
 
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.persistence.*;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -16,60 +15,53 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import br.com.coutrim.apostas.dao.ApostasDAO;
 import br.com.coutrim.apostas.model.Apostas;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.extern.slf4j.Slf4j;
 
 
 @Stateless
-@Path("apostas")
+@Path("/apostas")
+@Slf4j
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+@JsonIgnoreProperties
 public class ApostasRest {
 
 
-	@PersistenceContext
-	EntityManager manager;
-	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public List<Apostas> buscarTodos() {
-		return manager.createQuery("select c from Apostas c", Apostas.class).getResultList();
-	}
-	
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/{id}")
-	public Apostas buscar(@PathParam("id") Long id) {
-		Apostas aposta = manager.find(Apostas.class, id);
-		return aposta;
-	}
-	
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response criar(Apostas aposta){
-		manager.persist(aposta);
-		return Response.ok(aposta).build();
+    @Inject
+    ApostasDAO apostasDAO;
 
-	}
-	
-	@PUT
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/{id}")
-	public Apostas atualizar(@PathParam("id") Long id, Apostas aposta ) {
-		return manager.merge(aposta);
-	}
-	
-	@DELETE
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes(MediaType.APPLICATION_JSON)
-	@Path("/{id}")
-	public void apagar(@PathParam("id") Long id) {
-		Apostas aposta = manager.find(Apostas.class, id);
-		if (aposta != null) {
-			manager.remove(aposta);
-		}
-	}
-	
-	
+
+    @GET
+    public Response buscarTodos() {
+        return Response.ok(apostasDAO.buscarApostas()).build();
+    }
+
+    @GET
+    @Path("/{id}")
+    public Response buscar(@PathParam("id") Long id) {
+        return Response.ok(apostasDAO.buscarAposta(id)).build();
+    }
+
+    @POST
+    public Response criar(Apostas aposta) {
+        return Response.ok(apostasDAO.criarAposta(aposta)).build();
+
+    }
+
+    @PUT
+    @Path("/{id}")
+    public Response atualizar(Apostas aposta) {
+        return Response.ok(apostasDAO.atualizarAposta(aposta)).build();
+    }
+
+    @DELETE
+    @Path("/{id}")
+    public Response apagar(@PathParam("id") Long id, Apostas aposta) {
+        return Response.ok(apostasDAO.removerAposta(id, aposta)).build();
+    }
+
+
 }

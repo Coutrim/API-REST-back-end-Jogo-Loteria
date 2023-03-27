@@ -912,7 +912,7 @@ SERVICE_CONNECTION_ADMIN,SET_USER_ID,SYSTEM_USER!
 </ObjectGrants>
     </user>
     <table id="285" parent="2" name="TB_APOSTAS"/>
-    <table id="286" parent="2" name="TB_USUARIO"/>
+    <table id="286" parent="2" name="TB_USUARIOS"/>
     <column id="287" parent="285" name="id">
       <Position>1</Position>
       <DataType>bigint|0s</DataType>

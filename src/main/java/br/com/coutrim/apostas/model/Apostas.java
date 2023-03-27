@@ -7,6 +7,7 @@ import org.glassfish.grizzly.http.util.TimeStamp;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 
 
@@ -15,6 +16,8 @@ import javax.persistence.*;
 public class Apostas implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	public Apostas(Class<Apostas> apostasClass) {
+	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +36,15 @@ public class Apostas implements Serializable {
 	@Column(name = "acertos")
 	private Integer acertos;
 
+	@JsonProperty
+	@Column(name = "ganhos")
+	private Double ganhos;
+
+	public Apostas() {
+
+	}
+
+
 	public Date getData() {
 		return data;
 	}
@@ -41,9 +53,7 @@ public class Apostas implements Serializable {
 		this.data = data;
 	}
 
-	@JsonProperty
-	@Column(name = "ganhos")
-	private Double ganhos;
+
 
 	public Long getId() {
 		return id;
@@ -78,6 +88,7 @@ public class Apostas implements Serializable {
 	public void setGanhos(Double ganhos) {
 		this.ganhos = ganhos;
 	}
+
 
 
 }
