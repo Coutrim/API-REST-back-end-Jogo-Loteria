@@ -1,36 +1,35 @@
-# Agenda Telefônica
-## Esse é um projeto de uma Agenda Telefônica desenvolvido com a arquitetura REST. No front-end foi usado o framework Angular 10. No back-end: Java EE 8 com EJB3, RESTEasy (JAX-RS), Hibernate/JPA e o gerenciador de dependências Maven. O banco de dados é o MySQL 8.
+# Back-end do projeto Jogo Loteria
+## Esse é uma API desenvolvida com a arquitetura REST. No front-end foi usado o framework Angular 10. No back-end: Java EE 8 com EJB3, RESTEasy (JAX-RS), Hibernate/JPA e o gerenciador de dependências Maven. O banco de dados é o MySQL 8.
 
-### [Link do repositório do front-end](https://github.com/israelferreira/agenda-telefonica-frontend)
 
 
 ## URLs:
 |  URL |  Método | Descrição |
 |----------|--------------|--------------|
-|`http://localhost:8080/agenda-telefonica-backend/api/contato`                                 | GET | Retorna todos os contatos salvos no banco de dados |
-|`http://localhost:8080/agenda-telefonica-backend/api/contato`                                 | POST | Salva um contato no banco de dados |
-|`http://localhost:8080/agenda-telefonica-backend/api/contato/{id}`                              | GET | Retorna o contato com o ID do parâmetro da URL |
-|`http://localhost:8080/agenda-telefonica-backend/api/contato/{id}`                              | DELETE | Deleta o registro do contato com o ID do parâmetro da URL |
-|`http://localhost:8080/agenda-telefonica-backend/api/contato/{id}`                              | PUT | Atualiza o registro do contato com o ID numérico do parâmetro da URL|
+|`http://localhost:8080/apostas-backend/api/apostas`                                 | GET | Retorna todas as apostas salvas no banco de dados |
+|`http://localhost:8080/apostas-backend/api/apostas`                                 | POST | Salva uma aposta no banco de dados |
+|`http://localhost:8080/apostas-backend/api/apostas/id`                              | GET | Retorna a aposta com o ID do parâmetro da URL |
+|`http://localhost:8080/apostas-backend/api/apostas/id`                              | DELETE | Deleta o registro da aposta com o ID do parâmetro da URL |
+|`http://localhost:8080/apostas-backend/api/apostas/id`                              | PUT | Atualiza o registro da aposta com o ID numérico do parâmetro da URL|
 
 
 ## Validações das requisições POST e PUT
-Para executar os métodos HTTP da aplicação com alguma ferramenta de testes de API, como o [Postman](https://www.postman.com/) por exemplo, é necessário configurar o cabeçalho (header) da requisição com o atributo chave-valor "Content-Type: application/json".
+Para executar os métodos HTTP da aplicação com alguma ferramenta de testes de API, como o [Postman](https://www.postman.com/) por exemplo, é necessário habilitar todas opções sugeridas no cabeçalho (header) da requisição e com o atributo chave-valor "Content-Type: application/json".
 No método POST, o corpo da requisição deve ser enviado dessa forma:
 
-    {
-        "nome":  "github.com/israelferreira",
-        "telefone":  "(61) 99999-1234",     
-        "email":  "email@valido.com",
-        "dataNascimento":  "1954-01-14",
-        "informacoesExtras":  null
-    }
+    {   
+     "acertos":"1",
+     "erros": "1",
+     "ganhos":"2098",
+     "data":"2022-04-01 14:30:00"
+    
+}
 
-O **nome** não pode ser nulo e deve ter entre 2 e 200 caracteres.<br>
-O **telefone** pode ser nulo.<br>
-O **email** pode ser nulo. Caso for preenchido, deve ser válido, contendo um "@" na string.<br>
-A **data de nascimento** pode ser nula. Caso for preenchida, deve ser válida, no formato "YYYY-MM-DD".<br>
-As **informações extras** do contato podem ser nulas. Se forem preenchidas, o tamanho máximo é de 500 caracteres.<br>
+O campo **acertos** não pode ser nulo e deve ter entre 2 e 200 caracteres.<br>
+O campo **erros** pode ser nulo.<br>
+O campo **ganhos** pode ser nulo. Caso for preenchido, deve ser válido, contendo um "@" na string.<br>
+A **data** pode ser nula. Caso for preenchida, deve ser válida, no formato "YYYY-MM-DD".<br>
+
 
 O corpo da requisição no método PUT é similar ao POST. A diferença é que o ID do registro a ser editado deve ser passado como parâmetro na URL.
 
@@ -81,7 +80,5 @@ Dentro da tag drivers, adicione o seguinte texto:
     <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
 </driver>
 ```
-
-O script para criar o banco de dados está no arquivo "agenda-telefonica (MySQL8 Database).sql".
 
 Após esses passos, o backend do projeto deve ser executado no servidor WildFly.
